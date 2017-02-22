@@ -3,11 +3,12 @@
 
 # Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+A: If there are only two squares consisting of the same two digits in a given unit then we can eliminate these two digits from the remaining sqaures of the unit. This indicates that the given two sqaures are constrained to the two values and we propogate this constraint to the remaining squares or cells. 
+ This is repeated for all units in the Sudoku puzzle
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+A: With diagonal sudoku we check if only_choice and eliminate can be applied to the diagonal sqaures  and propagate this constraint to the remaining cells. 
 
 ### Install
 
