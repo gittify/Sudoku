@@ -1,7 +1,7 @@
 # Artificial Intelligence Nanodegree
 ## Introductory Project: Diagonal Sudoku Solver
 
-# Question 1 (NIfaked Twins)
+# Question 1 (Naked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
 A:  In the naked twin strategy, if there are two boxes with only two digits and both the boxes contain the same two digits then we know that one of the two boxes will contain one digit and the other box the second digit. eg one box contains 45 and other contains 54 then we don't know which one has a 4 and which one has a 5, but we know one thing for sure — the values 4 and 5 are locked in those two boxes, so no other box in their same unit can contain the values 4 or 5. Therefore we can safely remove these digits from the other boxes in the same unit. 
 The two digits are constrained to the two boxes and when this constraint is propagated to the remaining boxes it   eliminates the digits from the remaining boxes. This makes it faster for us to deduce the possible values in the boxes thereby making the sudoku reach a solution or not much faster.
