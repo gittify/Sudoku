@@ -1,14 +1,17 @@
 # Artificial Intelligence Nanodegree
 ## Introductory Project: Diagonal Sudoku Solver
 
-# Question 1 (Naked Twins)
+# Question 1 (NIfaked Twins)
 Q: How do we use constraint propagation to solve the naked twins problem?  
-A: If there are only two squares consisting of the same two digits in a given unit then we can eliminate these two digits from the remaining sqaures of the unit. This indicates that the given two sqaures are constrained to the two values and we propogate this constraint to the remaining squares or cells. 
- This is repeated for all units in the Sudoku puzzle
+A:  In the naked twin strategy, if there are two boxes with only two digits and both the boxes contain the same two digits then we know that one of the two boxes will contain one digit and the other box the second digit. eg one box contains 45 and other contains 54 then we don't know which one has a 4 and which one has a 5, but we know one thing for sure — the values 4 and 5 are locked in those two boxes, so no other box in their same unit can contain the values 4 or 5. Therefore we can safely remove these digits from the other boxes in the same unit. 
+The two digits are constrained to the two boxes and when this constraint is propagated to the remaining boxes it   eliminates the digits from the remaining boxes. This makes it faster for us to deduce the possible values in the boxes thereby making the sudoku reach a solution or not much faster.
+ 
 
 # Question 2 (Diagonal Sudoku)
 Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: With diagonal sudoku we check if only_choice and eliminate can be applied to the diagonal sqaures  and propagate this constraint to the remaining cells. 
+A: Constraint Propagation is all about using local constraints in a space (in the case of Sudoku, the constraints of each square) to dramatically reduce the search space. As we enforce each constraint, we see how it introduces new constraints for other parts of the board that can help us further reduce the number of possibilities
+Diagonal Sudoku has additional constraints such that the left and right diagonals should have only one occurence of all digits from 1 to 9. Thus the units now contain two additional sets of boxes and peers of the 'greyed out '
+square units have additional units to look for constraints.Thus with diagonal sudoku we check if only_choice and eliminate can be applied to the diagonal sqaures  and propagate this constraint to the remaining cells. 
 
 ### Install
 
